@@ -88,7 +88,7 @@ def select(prompt, choices)
   answer = ask(display_prompt)
   begin
     choices.each {|e|
-      return e if e.downcase == answer.downcase
+      return e if answer.downcase.include? e.downcase
     }
     answer = ask("I'm sorry, please pick one : " + choices.join(","))
   end while true

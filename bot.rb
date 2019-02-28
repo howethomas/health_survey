@@ -1,27 +1,33 @@
 #!/usr/bin/env ruby
 #
 #
-PROMPT_1 = ENV['PROMPT_1'] || 'Default prompt 1'
-PROMPT_2 = ENV['PROMPT_2'] || 'Default prompt 2'
-PROMPT_3 = ENV['PROMPT_3'] || 'Default prompt 3'
-SIGNATURE = ENV['SIGNATURE'] || 'Default signature prompt'
-
 
 require "./lib/greenbot.rb"
-tell PROMPT_1
-issue = note(PROMPT_2)
-if confirm("Would you like someone to contact you?")
-  contact_me = true
-  contact_me.remember("contact_me")
-  name = ask("When we call, who should we ask for?")
-  name.remember("who_to_ask_for")
-  if confirm("Is there another number we should try?")
-    better_number = ask("Please enter that number with an area code")
-    better_number.remember("better_number")
-  end
-else
-  tell("No problem at all.")
+choices = %w(poor fair good great excellent)
+overallExp = select ENV['WELCOME'], choices
+case overallExp
+when 'poor'
+  questions = %w(Q_1 Q_2 Q_3 Q_4 Q_5 Q_6 Q_7)
+when 'fair'
+  questions = %w(Q_1 Q_2 Q_3 Q_4 Q_5 Q_6 Q_7)
+when 'good'
+  questions = %w(Q_1 Q_2 Q_3 Q_4 Q_5 Q_7)
+when 'great'
+  questions= %w(Q_1 Q_2 Q_3 Q_4)
+when 'excellent'
+  questions= %w(Q_2 Q_3 Q_4)
 end
-tell PROMPT_3
-tell SIGNATURE
+
+for q in questions
+  case q
+  when 'Q_1', 'Q_2', 'Q_3', 'Q_4', 'Q_5'
+    ans = select ENV[q], choices
+    ans.remember(q)
+  when 'Q_6', 'Q_7'
+    ans = note(ENV[q]) 
+    ans.remember(q)
+  end
+end
+
+tell ENV['SIGNATURE']
 

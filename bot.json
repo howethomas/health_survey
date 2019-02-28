@@ -1,27 +1,57 @@
 [{
   "default_cmd": "npm start",
-  "default_path": "./node_modules/__name__",
+  "default_path": "./node_modules/health_survey",
   "default_settings": [
    {
-      "name": "PROMPT_1",
-      "value": "Change me to change prompt 1",
+      "name": "WELCOME",
+      "value": "Please select the word that best reflects your recent experience at St. Michael’s Health Network?",
       "type": "text"
     },
-    {
-      "name": "PROMPT_2",
-      "value": "Change me to change prompt 2",
+   {
+      "name": "Q_1",
+      "value": "For your most recent visit, how would you rate the length of time you had to wait in the waiting area and exam room before speaking with the health care provider about the reason for your visit?",
+      "type": "text"
+    },
+   {
+      "name": "Q_2",
+      "value": "Thinking about the MAIN health care provider you spoke with during your visit, how would you rate their knowledge about your medical history and their attentiveness in listening to your concerns?",
+      "type": "text"
+    },
+   {
+      "name": "Q_3",
+      "value": "Was your MAIN health care provider sensitive to your needs and preferences and did they treat you with dignity and respect?",
+      "type": "text"
+    },
+   {
+      "name": "Q_4",
+      "value": "Did your MAIN health care provider explain things in a way that was easy to understand?",
+      "type": "text"
+    },
+   {
+      "name": "Q_5",
+      "value": "Thinking about your most recent visit, how would you rate the overall cleanliness and physical comfort of the office/ clinic?",
+      "type": "text"
+    },
+   {
+      "name": "Q_6",
+      "value": "Thinking of your overall experience with our office/clinic, what is done particularly well?",
+      "type": "text"
+    },
+   {
+      "name": "Q_7",
+      "value": "What could be improved?",
       "type": "text"
     },
     {
       "name": "SIGNATURE",
-      "value": "Thank you, you can visit us on the web at http://www.green-bot.com",
+      "value": "Thank you!",
       "type": "text"
     }
   ],
-  "desc": "__description__",
+  "desc": "A patient health survey",
   "icon_class": "information",
-  "name": "__name__",
+  "name": "health_survey",
   "owner_cmd": "",
-  "short_desc": "__description__",
-  "repo_link": "https://github.com/__github_account__/__name__"
+  "short_desc": "A patient health survey",
+  "repo_link": "https://github.com/howethomas/health_survey"
 }]
