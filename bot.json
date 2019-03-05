@@ -4,12 +4,12 @@
   "default_settings": [
    {
       "name": "WELCOME",
-      "value": "Please select the word that best reflects your recent experience at St. Michael’s Health Network?",
+      "value": "This is an automated message from St. Michael's Hospital. Would you like to answer a few quick questions about today's visit?",
       "type": "text"
     },
    {
       "name": "Q_1",
-      "value": "For your most recent visit, how would you rate the length of time you had to wait in the waiting area and exam room before speaking with the health care provider about the reason for your visit?",
+      "value": "How was your overall experience at your visit?",
       "type": "text"
     },
    {

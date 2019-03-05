@@ -10,25 +10,14 @@ require 'airbrake'
 require 'timeout'
 
 if ENV['DEVELOPER'] == "true"
-  FIVE_MINUTES = 5
-  HALF_AN_HOUR = 30
+  FIVE_MINUTES = 20
+  HALF_AN_HOUR = 60
   MESSAGE_PACE = 1
   at_exit byebug if $!
 else
   FIVE_MINUTES = 5*60
   HALF_AN_HOUR = 30*60
   MESSAGE_PACE = 3.1415
-  at_exit {
-    e = $!
-    unless e.nil?
-      Airbrake.notify_or_ignore($!, {
-        error_message: e.message,
-        backtrace: e.backtrace,
-        cgi_data: ENV.to_hash
-        })
-        exit!
-    end
-  }
 end
 
 # Handles the collection and remembering of data
